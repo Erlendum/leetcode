@@ -6,7 +6,7 @@ func intToRoman(num int) string {
 	s1 := []string{"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"}
 	s2 := []string{"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"}
 	s3 := []string{"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"}
-	s4 := []string{"", "M", "MM", "MMM", "MMM"}
+	s4 := []string{"", "M", "MM", "MMM", "MMMM"}
 
 	p1 := s4[num/1000]
 	p2 := s3[num/100%10]

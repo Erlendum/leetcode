@@ -2,11 +2,19 @@ package main
 
 import "fmt"
 
-func climbStairs(n int) int {
+func climbStairsHelper(n int, memo map[int]int) int {
 	if n == 0 || n == 1 {
 		return 1
 	}
-	return climbStairs(n-1) + climbStairs(n-2)
+	if _, ok := memo[n]; !ok {
+		memo[n] = climbStairsHelper(n-1, memo) + climbStairsHelper(n-2, memo)
+	}
+	return memo[n]
+}
+
+func climbStairs(n int) int {
+	memo := make(map[int]int)
+	return climbStairsHelper(n, memo)
 }
 
 func main() {
